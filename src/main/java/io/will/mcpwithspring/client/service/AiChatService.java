@@ -13,7 +13,7 @@ public class AiChatService {
         this.chatClient = chatClient;
     }
 
-    public Flux<String> plainChat(String userInput) {
+    public Flux<String> streamChat(String userInput) {
         return chatClient.prompt()
                 .advisors(new SimpleLoggerAdvisor())
                 .user(userInput)

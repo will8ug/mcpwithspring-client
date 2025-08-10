@@ -19,6 +19,6 @@ public class AiChatController {
 
     @PostMapping("/chat")
     public Flux<String> chat(@RequestBody ChatRequest chatRequest) {
-        return aiChatService.plainChat(chatRequest.question());
+        return aiChatService.streamChat(chatRequest.question());
     }
 }
