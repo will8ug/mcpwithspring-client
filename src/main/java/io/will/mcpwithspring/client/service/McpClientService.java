@@ -19,4 +19,8 @@ public class McpClientService {
             System.out.println(listToolsResult);
         });
     }
+
+    public int countMcpClients() {
+        return mcpClients.size();
+    }
 }
