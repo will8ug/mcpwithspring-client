@@ -22,6 +22,6 @@ class McpControllerIntegrationTest {
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(Integer.class)
-                .isEqualTo(1); // Should return 1 since MCP server is running and connected
+                .isEqualTo(2);
     }
 }

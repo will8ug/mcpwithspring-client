@@ -23,3 +23,16 @@ curl --location 'http://localhost:8081/ai/chat' \
 }'
 
 curl -X POST --location 'http://localhost:8081/mcp/examine-tools'
+curl --location 'http://localhost:8081/mcp/clients/count'
+
+curl --location 'http://localhost:8081/ai/chat' \
+--header 'Content-Type: application/json' \
+--data '{
+    "question": "List the files in my home directory"
+}'
+
+curl --location 'http://localhost:8081/ai/chat' \
+--header 'Content-Type: application/json' \
+--data '{
+    "question": "What is the current working directory?"
+}'
