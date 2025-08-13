@@ -22,6 +22,6 @@ class McpControllerIntegrationTest {
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(Integer.class)
-                .isEqualTo(2);
+                .isEqualTo(3);
     }
 }

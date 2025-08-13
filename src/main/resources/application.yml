@@ -18,13 +18,14 @@ spring:
             mcp-server-poc:
               url: http://localhost:8080
         stdio:
-          connections:
-            filesystem:
-              command: npx
-              args:
-                - "-y"
-                - "@modelcontextprotocol/server-filesystem"
-                - ${user.home}
+          servers-configuration: classpath:/mcp-servers-config.json
+#          connections:
+#            filesystem:
+#              command: npx
+#              args:
+#                - "-y"
+#                - "@modelcontextprotocol/server-filesystem"
+#                - ${user.home}
     openai:
       api-key: ${DEEPSEEK_API_KEY}
       base-url: https://api.deepseek.com
