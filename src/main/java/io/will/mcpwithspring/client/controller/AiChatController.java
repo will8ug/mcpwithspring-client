@@ -21,4 +21,12 @@ public class AiChatController {
     public Flux<String> chat(@RequestBody ChatRequest chatRequest) {
         return aiChatService.streamChat(chatRequest.question());
     }
+
+    @PostMapping("/chat-in-conversation")
+    public Flux<String> chatInConversation(@RequestBody ChatRequest chatRequest) {
+        if (chatRequest.conversationId() == null || chatRequest.conversationId().isBlank()) {
+            throw new IllegalArgumentException("conversationId should not be blank");
+        }
+        return aiChatService.streamChatInConversation(chatRequest.question(), chatRequest.conversationId());
+    }
 }

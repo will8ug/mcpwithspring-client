@@ -1,3 +1,5 @@
+###################### Basic
+
 curl --location 'http://localhost:8081/ai/chat' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -9,6 +11,8 @@ curl --location 'http://localhost:8081/ai/chat' \
 --data '{
     "question": "What is the capital of France?"
 }'
+
+###################### MCP
 
 curl --location 'http://localhost:8081/ai/chat' \
 --header 'Content-Type: application/json' \
@@ -48,3 +52,40 @@ curl --location 'http://localhost:8081/ai/chat' \
 --data '{
     "question": "What are the hot news in Weibo today?"
 }'
+
+################# Chat Memory
+curl -X POST http://localhost:8081/ai/chat-in-conversation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "Hello, how are you?",
+    "conversationId": "test-conversation-001"
+  }'
+
+curl -X POST http://localhost:8081/ai/chat-in-conversation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "My name is Will",
+    "conversationId": "test-conversation-001"
+  }'
+
+curl -X POST http://localhost:8081/ai/chat-in-conversation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "Do you remember my name?",
+    "conversationId": "test-conversation-001"
+  }'
+
+curl -X POST http://localhost:8081/ai/chat-in-conversation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "Let us have one more round of test.",
+    "conversationId": "test-conversation-001"
+  }'
+
+curl -X POST http://localhost:8081/ai/chat-in-conversation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What do we have now?",
+    "conversationId": "test-conversation-001"
+  }'
+
